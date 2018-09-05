@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package pasien;
+package model;
 
 /**
  *
@@ -19,9 +19,15 @@ public class pasien1 {
     private int bulanLahir;
     private int tahunLahir;
 
+    /**
+     * method ini merupakan costructor kosong yang tidak memiliki parameter
+     */
     public pasien1() {
     }
-
+/**
+ * method 
+ * @return 
+ */
     public String getNoRekmedis() {
         return noRekmedis;
     }
