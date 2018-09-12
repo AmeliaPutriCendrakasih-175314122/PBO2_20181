@@ -17,9 +17,11 @@ public class AntrianPasien extends pasien1{
     private Klinik klinik;
     private pasien1 [] daftarpasien;
 
-    public AntrianPasien() {
+    public AntrianPasien(String nama) {
+        super(nama);
     }
 
+    
     public void setBulanAntrian(int bulanAntrian) {
         this.bulanAntrian = bulanAntrian;
     }
