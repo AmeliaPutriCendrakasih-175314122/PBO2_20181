@@ -11,13 +11,14 @@ package model;
  * @author user
  */
 public class Dokter {
-    private String NomorPegawai;
-    private String nama,alamat,tempatLahir;
-    private int tanggallahir;
+    private String NomorPegawai;//pendeklarasian variable Nomor pegawai dengan tipe String
+    private String nama;//pendeklarasian variable nama dengan tipe String
+    private String alamat;////pendeklarasian variable alamat dengan tipe String
+    private String tempatLahir;// //pendeklarasian variable tempatlahir dengan tipe String
+    private int tanggallahir;//pendeklarasian variable tanggalLahir dengan tipe integer
 
-    public Dokter() {
-    }
-
+/**
+ */
     public void setNomorPegawai(String NomorPegawai) {
         this.NomorPegawai = NomorPegawai;
     }
@@ -44,7 +45,6 @@ public class Dokter {
         
     }  
 }
-
     public String getNomorPegawai() {
         return NomorPegawai;
     }
