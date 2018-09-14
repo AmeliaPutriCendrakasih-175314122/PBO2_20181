@@ -6,6 +6,7 @@
 package view;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -17,10 +18,13 @@ import javax.swing.JTextField;
 public class DaftarAntrianPasien extends JDialog{
      private JLabel judulLabel; 
      private JLabel namaLabel;
-      private JLabel alamatLabel;
+     private JLabel alamatLabel;
      private JLabel NoRMLabel;
      private JTextField namaText;
      private JButton saveButton;
+     private JComboBox tglLahir;
+     private JComboBox blnLahir;
+     private JComboBox thnLahir;
 
      public DaftarAntrianPasien() {
         init();
@@ -35,36 +39,131 @@ public class DaftarAntrianPasien extends JDialog{
         judulLabel.setBounds(60, 50, 100, 10);
         this.add(judulLabel);
         
-        NoRMLabel = new JLabel("No RekaMedis:");
-        NoRMLabel.setBounds(20, 60, 90, 65);
+        NoRMLabel = new JLabel("No RekaMedis");
+        NoRMLabel.setBounds(20, 72, 120, 20);
         this.add(NoRMLabel);
         
         namaText = new JTextField();
-        namaText.setBounds (110,78,60,20);
-        namaText.setSize(80, 16);
+        namaText.setBounds (110,77,65,20);
+        namaText.setSize(84,20);
         this.add(namaText); 
         
-        namaLabel = new JLabel("Nama : ");
-        namaLabel.setBounds(20, 76, 50, 65);
+        namaLabel = new JLabel("Tgl");
+        namaLabel.setBounds(20, 80, 100, 65);
+        this.add(namaLabel);
+        
+        JComboBox tglLahir = new JComboBox();
+        tglLahir.addItem(1);
+        tglLahir.addItem(2);
+        tglLahir.addItem(3);
+        tglLahir.addItem(4);
+        tglLahir.addItem(5);
+        tglLahir.addItem(6);
+        tglLahir.addItem(7);
+        tglLahir.addItem(8);
+        tglLahir.addItem(9);
+        tglLahir.addItem(10);
+        tglLahir.addItem(11);
+        tglLahir.addItem(12);
+        tglLahir.addItem(13);
+        tglLahir.addItem(14);
+        tglLahir.addItem(15);
+        tglLahir.addItem(16);
+        tglLahir.addItem(17);
+        tglLahir.addItem(18);
+        tglLahir.addItem(19);
+        tglLahir.addItem(20);
+        tglLahir.addItem(21);
+        tglLahir.addItem(22);
+        tglLahir.addItem(23);
+        tglLahir.addItem(24);
+        tglLahir.addItem(25);
+        tglLahir.addItem(26);
+        tglLahir.addItem(27);
+        tglLahir.addItem(28);
+        tglLahir.addItem(29);
+        tglLahir.addItem(30);
+        tglLahir.addItem(31);
+        tglLahir.setBounds(45,105,67,20);
+        this.add(tglLahir);
+        
+        namaLabel = new JLabel("Bln");
+        namaLabel.setBounds(120, 80, 100, 65);
+        this.add(namaLabel);
+        
+        JComboBox blnLahir = new JComboBox();
+        blnLahir.addItem("Jan");
+        blnLahir.addItem("Feb");
+        blnLahir.addItem("Mar");
+        blnLahir.addItem("Apr");
+        blnLahir.addItem("May");
+        blnLahir.addItem("Jun");
+        blnLahir.addItem("Jul");
+        blnLahir.addItem("aug");
+        blnLahir.addItem("Sep");
+        blnLahir.addItem("Oct");
+        blnLahir.addItem("Nov");
+        blnLahir.addItem("Dec");
+        blnLahir.setBounds(138,105,67,20);
+        this.add(blnLahir);
+        
+        namaLabel = new JLabel("Thn");
+        namaLabel.setBounds(210, 80,100, 65);
+        this.add(namaLabel);
+        
+        JComboBox thnLahir = new JComboBox();
+        thnLahir.addItem(2018);
+        thnLahir.addItem(2017);
+        thnLahir.addItem(2016);
+        thnLahir.addItem(2015);
+        thnLahir.addItem(2014);
+        thnLahir.addItem(2013);
+        thnLahir.addItem(2012);
+        thnLahir.addItem(2011);
+        thnLahir.addItem(2010);
+        thnLahir.addItem(2009);
+        thnLahir.addItem(2008);
+        thnLahir.addItem(2007);
+        thnLahir.addItem(2006);
+        thnLahir.addItem(2005);
+        thnLahir.addItem(2004);
+        thnLahir.addItem(2003);
+        thnLahir.addItem(2002);
+        thnLahir.addItem(2001);
+        thnLahir.addItem(2000);
+        thnLahir.addItem(1999);
+        thnLahir.addItem(1998);
+        thnLahir.addItem(1997);
+        thnLahir.addItem(1996);
+        thnLahir.addItem(1995);
+        thnLahir.addItem(1994);
+        thnLahir.addItem(1993);
+        thnLahir.addItem(1992);
+        thnLahir.addItem(1991);
+        thnLahir.addItem(1990);
+        thnLahir.setBounds(234,105,67,20);
+        this.add(thnLahir);
+        namaLabel = new JLabel("Nama");
+        namaLabel.setBounds(20, 120, 50, 65);
         this.add(namaLabel);
         
         namaText = new JTextField();
-        namaText.setBounds (110,96,70,20);
-        namaText.setSize(80, 15);
+        namaText.setBounds (100,145,70,30);
+        namaText.setSize(84,20);
         this.add(namaText);
         
-        alamatLabel = new JLabel("Alamat: ");
-        alamatLabel.setBounds(20, 99, 70, 55);
+        alamatLabel = new JLabel("Alamat ");
+        alamatLabel.setBounds(20, 146, 70, 55);
         this.add(alamatLabel);
         
         namaText = new JTextField();
-        namaText.setBounds (110,113,40,20);
-        namaText.setSize(80, 15);
+        namaText.setBounds (100,168,70,20);
+        namaText.setSize(84,20);
         this.add(namaText);
         
         saveButton = new JButton("Simpan");
-        saveButton.setBounds(150,150,80,20);
-        namaText.setSize(80, 20);
+        saveButton.setBounds(155,240,80,20);
+        namaText.setSize(84, 28);
         this.add(saveButton);
     }
 

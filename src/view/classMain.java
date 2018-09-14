@@ -16,8 +16,8 @@ public class classMain {
      */
     public static void main(String[] args) {
        DaftarAntrianPasien test = new DaftarAntrianPasien ();
-       test.setSize(300, 400);
-        test.setVisible(true);
+       test.setSize(400, 500);
+       test.setVisible(true);
     }
     
 }
