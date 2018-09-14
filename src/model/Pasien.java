@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author user
+ * @author Kasih_175314122
  */
 public class Pasien {
     private String nama; // pendeklarasian variable nama dengan tipe String
