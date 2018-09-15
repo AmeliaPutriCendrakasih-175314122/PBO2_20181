@@ -51,37 +51,9 @@ public class DaftarAntrianPasien extends JDialog{
         this.add(tglLahirLabel);
         
         JComboBox tglLahir = new JComboBox();
-        tglLahir.addItem(1);
-        tglLahir.addItem(2);
-        tglLahir.addItem(3);
-        tglLahir.addItem(4);
-        tglLahir.addItem(5);
-        tglLahir.addItem(6);
-        tglLahir.addItem(7);
-        tglLahir.addItem(8);
-        tglLahir.addItem(9);
-        tglLahir.addItem(10);
-        tglLahir.addItem(11);
-        tglLahir.addItem(12);
-        tglLahir.addItem(13);
-        tglLahir.addItem(14);
-        tglLahir.addItem(15);
-        tglLahir.addItem(16);
-        tglLahir.addItem(17);
-        tglLahir.addItem(18);
-        tglLahir.addItem(19);
-        tglLahir.addItem(20);
-        tglLahir.addItem(21);
-        tglLahir.addItem(22);
-        tglLahir.addItem(23);
-        tglLahir.addItem(24);
-        tglLahir.addItem(25);
-        tglLahir.addItem(26);
-        tglLahir.addItem(27);
-        tglLahir.addItem(28);
-        tglLahir.addItem(29);
-        tglLahir.addItem(30);
-        tglLahir.addItem(31);
+        for (int i = 1; i <=31; i++) {
+           tglLahir.addItem(i);
+        }
         tglLahir.setBounds(45,105,67,20);
         this.add(tglLahir);
         
@@ -110,35 +82,9 @@ public class DaftarAntrianPasien extends JDialog{
         this.add(ThnLahirLabel);
         
         JComboBox thnLahir = new JComboBox();
-        thnLahir.addItem(2018);
-        thnLahir.addItem(2017);
-        thnLahir.addItem(2016);
-        thnLahir.addItem(2015);
-        thnLahir.addItem(2014);
-        thnLahir.addItem(2013);
-        thnLahir.addItem(2012);
-        thnLahir.addItem(2011);
-        thnLahir.addItem(2010);
-        thnLahir.addItem(2009);
-        thnLahir.addItem(2008);
-        thnLahir.addItem(2007);
-        thnLahir.addItem(2006);
-        thnLahir.addItem(2005);
-        thnLahir.addItem(2004);
-        thnLahir.addItem(2003);
-        thnLahir.addItem(2002);
-        thnLahir.addItem(2001);
-        thnLahir.addItem(2000);
-        thnLahir.addItem(1999);
-        thnLahir.addItem(1998);
-        thnLahir.addItem(1997);
-        thnLahir.addItem(1996);
-        thnLahir.addItem(1995);
-        thnLahir.addItem(1994);
-        thnLahir.addItem(1993);
-        thnLahir.addItem(1992);
-        thnLahir.addItem(1991);
-        thnLahir.addItem(1990);
+        for (int i = 1960; i <=2018; i++) {
+            thnLahir.addItem(i);
+        }
         thnLahir.setBounds(234,105,67,20);
         this.add(thnLahir);
         
