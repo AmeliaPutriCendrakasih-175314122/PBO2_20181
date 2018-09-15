@@ -16,15 +16,13 @@ import javax.swing.JTextField;
  * @author admin
  */
 public class DaftarAntrianPasien extends JDialog{
-     private JLabel judulLabel; 
-     private JLabel namaLabel;
-     private JLabel alamatLabel;
-     private JLabel NoRMLabel;
+     private JLabel judulLabel,namaLabel,alamatLabel,NoRMLabel,tglLahirLabel,blnLahirLabel,ThnLahirLabel,JenisKelaminLabel; 
      private JTextField namaText;
      private JButton saveButton;
      private JComboBox tglLahir;
      private JComboBox blnLahir;
      private JComboBox thnLahir;
+     private JComboBox JenisKelamin;
 
      public DaftarAntrianPasien() {
         init();
@@ -48,9 +46,9 @@ public class DaftarAntrianPasien extends JDialog{
         namaText.setSize(84,20);
         this.add(namaText); 
         
-        namaLabel = new JLabel("Tgl");
-        namaLabel.setBounds(20, 80, 100, 65);
-        this.add(namaLabel);
+        tglLahirLabel = new JLabel("Tgl");
+        tglLahirLabel.setBounds(20, 80, 100, 65);
+        this.add(tglLahirLabel);
         
         JComboBox tglLahir = new JComboBox();
         tglLahir.addItem(1);
@@ -87,9 +85,9 @@ public class DaftarAntrianPasien extends JDialog{
         tglLahir.setBounds(45,105,67,20);
         this.add(tglLahir);
         
-        namaLabel = new JLabel("Bln");
-        namaLabel.setBounds(120, 80, 100, 65);
-        this.add(namaLabel);
+        blnLahirLabel = new JLabel("Bln");
+        blnLahirLabel.setBounds(120, 80, 100, 65);
+        this.add(blnLahirLabel);
         
         JComboBox blnLahir = new JComboBox();
         blnLahir.addItem("Jan");
@@ -107,9 +105,9 @@ public class DaftarAntrianPasien extends JDialog{
         blnLahir.setBounds(138,105,67,20);
         this.add(blnLahir);
         
-        namaLabel = new JLabel("Thn");
-        namaLabel.setBounds(210, 80,100, 65);
-        this.add(namaLabel);
+        ThnLahirLabel = new JLabel("Thn");
+        ThnLahirLabel.setBounds(210, 80,100, 65);
+        this.add(ThnLahirLabel);
         
         JComboBox thnLahir = new JComboBox();
         thnLahir.addItem(2018);
@@ -143,6 +141,7 @@ public class DaftarAntrianPasien extends JDialog{
         thnLahir.addItem(1990);
         thnLahir.setBounds(234,105,67,20);
         this.add(thnLahir);
+        
         namaLabel = new JLabel("Nama");
         namaLabel.setBounds(20, 120, 50, 65);
         this.add(namaLabel);
@@ -160,6 +159,16 @@ public class DaftarAntrianPasien extends JDialog{
         namaText.setBounds (100,168,70,20);
         namaText.setSize(84,20);
         this.add(namaText);
+        
+        JenisKelaminLabel = new JLabel("Jenis Kelamin");
+        JenisKelaminLabel.setBounds(20, 180,100, 65);
+        this.add(JenisKelaminLabel);
+        
+        JComboBox Jeniskelamin = new JComboBox();
+        Jeniskelamin.addItem("Laki-Laki");
+        Jeniskelamin.addItem("Perempuan");
+        Jeniskelamin.setBounds(234,190,67,20);
+        this.add(thnLahir);
         
         saveButton = new JButton("Simpan");
         saveButton.setBounds(155,240,80,20);
