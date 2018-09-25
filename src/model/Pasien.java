@@ -100,6 +100,11 @@ public class Pasien {
     public void setTempatLahir(String tempatLahir) {
         this.tempatLahir = tempatLahir;
     }
+
+    public String getTempatLahir() {
+        return tempatLahir;
+    }
+    
 /**method setTanggalLahir bertipe void dengan menambahkan fungsi throws Exception
  * serta di tambah  throw new Exception berfungsi yang memberitahu user bahwa nilai yang dikeluarkan salah
  */
@@ -144,5 +149,17 @@ public class Pasien {
         }
         return null;
 
+    }
+     public void printInfo() {
+        System.out.printf("%-25s", "Nomor Rekam Medis Pasien");
+        System.out.println(": " + getNoRekmedis());
+        System.out.printf("%-25s", "Nama Pasien");
+        System.out.println(": " + getNama());
+        System.out.printf("%-25s", "Tempat, Tanggal Lahir");
+        System.out.print(": " + getTempatLahir() + " , ");
+        getTanggalLahir();
+        System.out.printf("%-25s", "Alamat");
+        System.out.println(": " + getAlamat());
+        System.out.println("");
     }
 }
