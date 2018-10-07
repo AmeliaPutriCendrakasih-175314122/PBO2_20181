@@ -42,15 +42,15 @@ public class FrameUtama extends JFrame implements ActionListener{
 
         //main frame label
         this.setLayout(null);
-        mainFrameLabel = new JLabel("Selamat Datang Selamat Berobat");
+        mainFrameLabel = new JLabel("Welcome to RS Group ");
         mainFrameLabel.setBounds(80, 80, 500, 50);
-        mainFrameLabel.setFont(new Font("Arial", Font.PLAIN, 25));
+        mainFrameLabel.setFont(new Font("Consolas", Font.PLAIN, 16));
         this.add(mainFrameLabel);
 
         this.setLayout(null);
-        mainFrame2Label = new JLabel("Silahkan Daftarkan Data Diri Anda");
+        mainFrame2Label = new JLabel("GET Your FORM");
         mainFrame2Label.setBounds(80, 110, 500, 50);
-        mainFrame2Label.setFont(new Font("Arial", Font.PLAIN, 25));
+        mainFrame2Label.setFont(new Font("Consolas", Font.PLAIN, 16));
         this.add(mainFrame2Label);
 
         //item tambah Pasien
@@ -75,6 +75,7 @@ public class FrameUtama extends JFrame implements ActionListener{
         tambahAntrian.addActionListener(this);
         exitMenuItem.addActionListener(this);
 
+        
     }
 
     @Override
