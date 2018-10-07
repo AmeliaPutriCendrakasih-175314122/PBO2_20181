@@ -139,16 +139,11 @@ public class DaftarAntrianPasien extends JDialog implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         if (e.getSource() == NORMtext) {
-            //mencari object pasien berdasarakan noRM
             Pasien caripasien = Pasien.cariPasien(NORMtext.getText());
-            //perbandingan apabila object cari sama dengan null
             if (caripasien == null) {
-                // menampilkan text pada jendela dialog
                 JOptionPane.showMessageDialog(this, " Pasien " + NORMtext.getText() + " Tidak Valid");
             } else {
-                //mengset namatext dengan data dari variabel nama dari object cari
                 namaText.setText(caripasien.getNama());
-                //mengset alamattext dengan data dari variabel alamat dari object cari
                 alamatText.setText(caripasien.getAlamat());
                 String tanggal = String.valueOf(caripasien.getTanggalLahir());
                 String bulan = String.valueOf(caripasien.getBulanLahir());
@@ -158,15 +153,10 @@ public class DaftarAntrianPasien extends JDialog implements ActionListener {
 
         }
         if (e.getSource() == saveButton) {
-            //mencari object pasien berdasarakan noRM
             Pasien cari = Pasien.cariPasien(NORMtext.getText());
-            //perulangan sebanyak indeks pada daftarpasien
             for (int i = 0; i < Pasien.daftarPasienKlinik.size(); i++) {
-                //perbandingan apabila object cari sama dengan object dari daftar pasie indeks ke i
                 if (cari == Pasien.daftarPasienKlinik.get(i)) {
-                    // menampilkan text pada jendela dialog
                     JOptionPane.showMessageDialog(this, " Data Tersimpan  : " + (i + 1));
-                    //method agar jdialog langsung keluar 
                     this.dispose();
                 }
 

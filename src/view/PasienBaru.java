@@ -156,9 +156,7 @@ public class PasienBaru extends JDialog implements ActionListener {
                 Logger.getLogger(PasienBaru.class.getName()).log(Level.SEVERE, null, ex);
             }
             Pasien.tambahPasienBaru(baru);
-            //menampilkan pesan 
-            JOptionPane.showMessageDialog(null, "DATA TERSIMPAN");
-            //method agar jdialog langsung keluar  
+            JOptionPane.showMessageDialog(null, "DATA TERSIMPAN");  
             this.dispose();
         }
     }
