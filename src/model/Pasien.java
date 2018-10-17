@@ -5,7 +5,14 @@
  */
 package model;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JComboBox;
 
 /**
@@ -13,6 +20,18 @@ import javax.swing.JComboBox;
  * @author Kasih_175314122
  */
 public class Pasien {
+
+    public static Object getDaftarPasien() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static void bacaDaftarPasien(File file) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static void simpanDaftarPasien(File file) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     private String nama; // pendeklarasian variable nama dengan tipe String
     private String alamat;// pendeklarasian variable alamat dengan tipe String
@@ -215,6 +234,41 @@ public class Pasien {
         System.out.println(": " + getAlamat());
         System.out.println("");
     }
+     public static void SimpanDaftarPasien(File file){
+         FileOutputStream fos = null;
+         try{
+             for (int i = 0; i < daftarPasienKlinik.size(); i++) {
+                 String data = daftarPasienKlinik.get(i).toString();
+                 fos.write(data.getBytes());
+                 
+             }
+         }catch (IOException ex){
+             Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE,null,ex);
+         }
 
+    }
+     public static void bacaDaftarPasien(File file){
+         FileInputStream input = null;
+                int data; // membuka fila             
+                   try {
+                   input = new FileInputStream("text.txt");
+                   }catch (FileNotFoundException fn) {
+                         System.out.println("File gak ketemu");
+                   } //Memebaca data dari file
+                   try {
+                   while ((data = input.read()) != -1) {
+                        System.out.println((char) data);
+                   }
+                        System.out.println();
+                   } catch(IOException in){
+                         System.out.println(in.getMessage());
+                   }//menutup file
+                  try {
+                  input.close();
+               } catch(IOException e) {}
+     }
+     
+         
+     }
    
-}
+
