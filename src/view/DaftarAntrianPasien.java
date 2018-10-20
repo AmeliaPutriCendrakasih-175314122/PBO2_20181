@@ -154,8 +154,8 @@ public class DaftarAntrianPasien extends JDialog implements ActionListener {
         }
         if (e.getSource() == saveButton) {
             Pasien cari = Pasien.cariPasien(NORMtext.getText());
-            for (int i = 0; i < Pasien.daftarPasienKlinik.size(); i++) {
-                if (cari == Pasien.daftarPasienKlinik.get(i)) {
+            for (int i = 0; i < Pasien.daftarPasien.size(); i++) {
+                if (cari == Pasien.daftarPasien.get(i)) {
                     JOptionPane.showMessageDialog(this, " Data Tersimpan  : " + (i + 1));
                     this.dispose();
                 }

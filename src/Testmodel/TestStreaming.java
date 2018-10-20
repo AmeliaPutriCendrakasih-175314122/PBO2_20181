@@ -32,7 +32,7 @@ public class TestStreaming {
             try {
                 fos.close();
             } catch (IOException ex) {
-                Logger.getLogger(TestStreaming.class.getName()).log(Level.SEVERE, null, ex);
+//                Logger.getLogger(TestStreaming.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         

@@ -10,7 +10,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JComboBox;
@@ -21,34 +23,32 @@ import javax.swing.JComboBox;
  */
 public class Pasien {
 
-    public static Object getDaftarPasien() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public static void bacaDaftarPasien(File file) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public static void simpanDaftarPasien(File file) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+    public static ArrayList<Pasien> daftarPasien = new ArrayList<Pasien>();// Arraylist berguna untuk mengisi setnama,setalamat,settempatLahir,settanggalLahir,setbulanLahir,
+    //settahunLahir,setnoRekmedis yang ada pada kelas pasien sebanyak data yang ada pada database.
     private String nama; // pendeklarasian variable nama dengan tipe String
     private String alamat;// pendeklarasian variable alamat dengan tipe String
     private String tempatLahir;// pendeklarasian variable tempat lahir dengan tipe String
     private int tanggalLahir;// pendeklarasian variable tanggal lahir dengan tipe integer
     private int bulanLahir;// pendeklarasian variable bulan lahir dengan tipe integer
     private int tahunLahir;// pendeklarasian variable tahun lahir dengan tipe integer
-    private String noRekmedis;// pendeklarasian variable nomor rekam medis  dengan tipe String
-    public static ArrayList<Pasien> daftarPasienKlinik = new ArrayList<Pasien>();// Arraylist berguna untuk mengisi setnama,setalamat,settempatLahir,settanggalLahir,setbulanLahir,
-    //settahunLahir,setnoRekmedis yang ada pada kelas pasien sebanyak data yang ada pada database.
+    private String noRekmedis, nik;// pendeklarasian variable nomor rekam medis  dengan tipe String
 
+    
     /**
      * method ini merupakan costructor yang memiliki parameter String nama,
      * String alamat, String tempatLahir, int tanggalLahir, int bulanLahir, int
      * tahunLahir,String noRekmedis dengan this yang berfungsi untuk merujuk
      * atribut dalam method yang sedang berlaku dan pada dasarnya this digunakan
      * ketika nama atribut sama dengan variable local.
+     *
+     * @param nama
+     * @param alamat
+     * @param tempatLahir
+     * @param tanggalLahir
+     * @param bulanLahir
+     * @param tahunLahir
+     * @param noRekmedis
+     
      */
     public Pasien(String nama, String alamat, String tempatLahir, int tanggalLahir, int bulanLahir, int tahunLahir, String noRekmedis) {
         this.nama = nama;
@@ -58,15 +58,28 @@ public class Pasien {
         this.bulanLahir = bulanLahir;
         this.tahunLahir = tahunLahir;
         this.noRekmedis = noRekmedis;
+       
     }
 
     public Pasien() {
+    }
+
+   
+
+    public String getNik() {
+        return nik;
+    }
+
+    public void setNik(String nik) {
+        this.nik = nik;
     }
 
     /**
      * method getNoRekmedis dengan tipe String dan didalam method ini terdapat
      * return noRekmedis dimana nilai dari NoRekmedis akan dibalikan ke
      * getNoRekmedis
+     *
+     * @return
      */
     public String getNoRekmedis() {
         return noRekmedis;
@@ -76,18 +89,19 @@ public class Pasien {
      * method setNoRekmedis bertipe void dengan menambahkan fungsi throws
      * NumberFormatException serta di tambah throw new NumberFormatException
      * berfungsi yang memberitahu user bahwa nilai yang dikeluarkan salah
+     *
+     * @param noRekmedis
      */
-    public void setNoRekmedis(String noRekmedis) throws NumberFormatException {
-        if (noRekmedis.toCharArray().length >= 10) {
-            this.noRekmedis = noRekmedis;
-        } else {
-            throw new NumberFormatException("Nomor Rekam Medis Tidak Terdeteksi.....");
-        }
+    public void setNoRekmedis(String noRekmedis) {
+        this.noRekmedis = noRekmedis;
+
     }
 
     /**
      * method getNama dengan tipe String dan didalam method ini terdapat return
      * nama dimana nilai dari nama akan dibalikan ke getnama
+     *
+     * @return
      */
     public String getNama() {
         return nama;
@@ -98,6 +112,8 @@ public class Pasien {
      * method terdapat this yang berfungsi untuk merujuk atribut dalam method
      * yang sedang berlaku dan pada dasarnya this digunakan ketika nama atribut
      * sama dengan variable local
+     *
+     * @param nama
      */
     public void setNama(String nama) {
         this.nama = nama;
@@ -106,6 +122,8 @@ public class Pasien {
     /**
      * method getAlamat dengan tipe String dan didalam method ini terdapat
      * return Alamat dimana nilai dari nama akan dibalikan ke getAlamat
+     *
+     * @return
      */
     public String getAlamat() {
         return alamat;
@@ -116,6 +134,8 @@ public class Pasien {
      * method terdapat this yang berfungsi untuk merujuk atribut dalam method
      * yang sedang berlaku dan pada dasarnya this digunakan ketika nama atribut
      * sama dengan variable local
+     *
+     * @param alamat
      */
     public void setAlamat(String alamat) {
         this.alamat = alamat;
@@ -124,6 +144,8 @@ public class Pasien {
     /**
      * method getBulanLahir dengan tipe int dan didalam method ini terdapat
      * return BulanLahir dimana nilai dari nama akan dibalikan ke getBulanLahir
+     *
+     * @return
      */
     public int getBulanLahir() {
         return bulanLahir;
@@ -133,6 +155,9 @@ public class Pasien {
      * method setNoRekmedis bertipe void dengan menambahkan fungsi throws
      * Exception serta di tambah throw new Exception berfungsi yang memberitahu
      * user bahwa nilai yang dikeluarkan salah
+     *
+     * @param bulanLahir
+     * @throws java.lang.Exception
      */
     public void setBulanLahir(int bulanLahir) throws Exception {
         if (bulanLahir > 0 && bulanLahir < 13) {
@@ -147,6 +172,8 @@ public class Pasien {
      * TempatLahir. Didalam method terdapat this yang berfungsi untuk merujuk
      * atribut dalam method yang sedang berlaku dan pada dasarnya this digunakan
      * ketika nama atribut sama dengan variable local
+     *
+     * @param tempatLahir
      */
     public void setTempatLahir(String tempatLahir) {
         this.tempatLahir = tempatLahir;
@@ -160,6 +187,9 @@ public class Pasien {
      * method setTanggalLahir bertipe void dengan menambahkan fungsi throws
      * Exception serta di tambah throw new Exception berfungsi yang memberitahu
      * user bahwa nilai yang dikeluarkan salah
+     *
+     * @param tanggalLahir
+     * @throws java.lang.Exception
      */
     public void setTanggalLahir(int tanggalLahir) throws Exception {
         if (tanggalLahir > 0 && tanggalLahir < 31) {
@@ -173,6 +203,8 @@ public class Pasien {
      * method getTanggalLahir dengan tipe int dan didalam method ini terdapat
      * return TanggalLahir dimana nilai dari nama akan dibalikan ke
      * getTanggalLahir
+     *
+     * @return
      */
     public int getTanggalLahir() {
         return tanggalLahir;
@@ -182,6 +214,9 @@ public class Pasien {
      * method setTahunLahir bertipe void dengan menambahkan fungsi throws
      * Exception serta di tambah throw new Exception berfungsi yang memberitahu
      * user bahwa nilai yang dikeluarkan salah
+     *
+     * @param tahunLahir
+     * @throws java.lang.Exception
      */
     public void setTahunLahir(int tahunLahir) throws Exception {
         if (tahunLahir > 0) {
@@ -200,26 +235,27 @@ public class Pasien {
      * merupakan method dengan parameter pasien dengan tipe Pasien juga yang
      * berfungsi untuk menambah jumlah pasien dengan memanggil
      * daftarPassienKlinik dan di tambah operator add dengan parameter pasien.
+     *
+     * @param pasien
      */
     public static void tambahPasienBaru(Pasien pasien) {
-        daftarPasienKlinik.add(pasien);
+        daftarPasien.add(pasien);
     }
 
-    /**
-     * method caripasien dengan tipe Pasien dan bersifat static ini merupakan
-     * method yang berfungsi untuk mencari data pasien yang diinginkan user.
-     * sama seperti method getter , method ini juga memiliki nilai balik yang
-     * berfungsi untuk mengembalikan nilai method jika ditemukan nilainya , dan
-     * return null untuk data yang tdk ditemukan.
-     */
-    public static Pasien cariPasien(String string) {
-        for (int i = 0; i < daftarPasienKlinik.size(); i++) {
-            if (daftarPasienKlinik.get(i).noRekmedis == string) {
-                return daftarPasienKlinik.get(i);
-            }
-        }
-        return null;
+    public static ArrayList<Pasien> getDaftarPasien() {
+        return daftarPasien;
+    }
 
+    public static void setDaftarPasien(ArrayList<Pasien> daftarPasien) {
+        Pasien.daftarPasien = daftarPasien;
+    }
+
+    public String Pendaftaran() {
+        Date D = new Date();
+        noRekmedis = "yyyyMMdd";
+        SimpleDateFormat x = new SimpleDateFormat(noRekmedis);
+        String sub_nama = nama.substring(0, 3);
+        return noRekmedis = x.format(D).concat(sub_nama);
     }
 
     public void printInfo() {
@@ -234,41 +270,86 @@ public class Pasien {
         System.out.println(": " + getAlamat());
         System.out.println("");
     }
-     public static void SimpanDaftarPasien(File file){
-         FileOutputStream fos = null;
-         try{
-             for (int i = 0; i < daftarPasienKlinik.size(); i++) {
-                 String data = daftarPasienKlinik.get(i).toString();
-                 fos.write(data.getBytes());
-                 
-             }
-         }catch (IOException ex){
-             Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE,null,ex);
-         }
 
+    /**
+     * method caripasien dengan tipe Pasien dan bersifat static ini merupakan
+     * method yang berfungsi untuk mencari data pasien yang diinginkan user.
+     * sama seperti method getter , method ini juga memiliki nilai balik yang
+     * berfungsi untuk mengembalikan nilai method jika ditemukan nilainya , dan
+     * return null untuk data yang tdk ditemukan.
+     *
+     * @param noRekmedis
+     * @return
+     */
+    public static Pasien cariPasien(String noRekmedis) {
+        for (int i = 0; i < daftarPasien.size(); i++) {
+            if (daftarPasien.get(i).getNik().equals(noRekmedis)) {
+                return daftarPasien.get(i);
+            }
+        }
+        return null;
     }
-     public static void bacaDaftarPasien(File file){
-         FileInputStream input = null;
-                int data; // membuka fila             
-                   try {
-                   input = new FileInputStream("text.txt");
-                   }catch (FileNotFoundException fn) {
-                         System.out.println("File gak ketemu");
-                   } //Memebaca data dari file
-                   try {
-                   while ((data = input.read()) != -1) {
-                        System.out.println((char) data);
-                   }
-                        System.out.println();
-                   } catch(IOException in){
-                         System.out.println(in.getMessage());
-                   }//menutup file
-                  try {
-                  input.close();
-               } catch(IOException e) {}
-     }
-     
-         
-     }
-   
 
+    public static void simpanDaftarPasien(File file) {
+        FileOutputStream fos = null;
+        try {
+            fos = new FileOutputStream(file, true);
+            for (int i = 0; i < daftarPasien.size(); i++) {
+                String data = daftarPasien.get(i).toString();
+                fos.write(data.getBytes());
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                fos.close();
+            } catch (IOException ex) {
+                Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
+    }
+
+    public static void bacaDaftarPasien(File file) {
+        FileInputStream fis = null;
+        String hasil = "";
+        int data; // membuka fila 
+        boolean nama = false;
+        boolean alamat = false;
+        Pasien input = new Pasien();
+        try {
+            fis = new FileInputStream(file);
+            while ((data = fis.read()) > 0) {
+                if ((char) data != '\n') {
+                    if ((char) data != '\t') {
+                        hasil = hasil + daftarPasien.add(input);
+                    } else if (nama == false) {
+                        input.setNama(hasil);
+                        nama = true;
+                        hasil = "";
+                    } else if (alamat == false) {
+                        input.setAlamat(hasil);
+                        alamat = true;
+                        hasil = "";
+
+                    }
+
+                }
+            }
+
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
+
+        }
+    }
+
+    @Override
+    public String toString() {
+        return noRekmedis + "\t" + nama + "\t" + alamat + "\n";
+    }
+
+}
