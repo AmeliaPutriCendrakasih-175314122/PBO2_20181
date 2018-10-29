@@ -324,7 +324,7 @@ public class Pasien {
             while ((data = fis.read()) > 0) {
                 if ((char) data != '\n') {
                     if ((char) data != '\t') {
-                        hasil = hasil + daftarPasien.add(input);
+                        hasil = hasil+(char)data;
                     } else if (nama == false) {
                         input.setNama(hasil);
                         nama = true;

@@ -1,2 +1,4 @@
 model.Pasien@1db9742model.Pasien@106d69cmodel.Pasien@1db9742model.Pasien@106d69cmodel.Pasien@1db9742model.Pasien@106d69cmodel.Pasien@1db9742model.Pasien@106d69cmodel.Pasien@1db9742model.Pasien@106d69cmodel.Pasien@1db9742model.Pasien@106d69cmodel.Pasien@1db9742model.Pasien@106d69cmodel.Pasien@1db9742model.Pasien@106d69cmodel.Pasien@1db9742model.Pasien@106d69cNama : puspa, Alamat : klaten, No Rekam Medis : 001Nama : adi, Alamat : klaten, No Rekam Medis : 002001	puspa	klaten
 002	adi	klaten
+001	puspa	klaten
+002	adi	klaten
